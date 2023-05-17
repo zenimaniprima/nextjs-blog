@@ -25,9 +25,10 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      <header className={`${styles.header}`}>
         {home ? (
           <>
+          <div className={`${utilStyles.breathingAva}`}>
             <Image
               priority
               src="/images/profile.jpg"
@@ -36,6 +37,7 @@ export default function Layout({ children, home }) {
               width={144}
               alt=""
             />
+          </div>
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
           </>
         ) : (
@@ -50,7 +52,7 @@ export default function Layout({ children, home }) {
                 alt=""
               />
             </Link>
-            <h2 className={utilStyles.headingLg}>
+            <h2 className={'font-normal text-2xl mt-2'}>
               <Link href="/" className={utilStyles.colorInherit}>
                 {name}
               </Link>
